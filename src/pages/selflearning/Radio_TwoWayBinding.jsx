@@ -16,7 +16,7 @@ function Radio_TwoWayBinding() {
     return (
         <>
             <div style={{ padding: 20 }}>
-                {course.map(course => (
+                {course?.map(course => (
                     <div key={course.id}>
                         <input type='radio'
                             checked={checked === course.id}

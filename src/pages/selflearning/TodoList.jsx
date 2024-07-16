@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 function ToDoList() {
     const [job, setJob] = useState('')
-    //const [jobs, setJobs] = useState([] ?? storeageJobs)
+   // const [jobs, setJobs] = useState([] ?? storeageJobs)
     const [jobs, setJobs] = useState(() => {
         const storeageJobs = JSON.parse(localStorage.getItem('jobs'))
         return storeageJobs
@@ -29,7 +29,7 @@ function ToDoList() {
                 <button onClick={handleSubmit}>Add</button>
 
                 <ul>
-                    {jobs.map((job, index) => (
+                    {jobs?.map((job, index) => (
                         <li key={index}> {job} </li>
                     ))}
                 </ul>
