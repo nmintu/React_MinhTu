@@ -29,7 +29,7 @@ function CheckBox_TwoWayBinding() {
     return (
         <>
             <div style={{ padding: 20 }}>
-                {course.map(course => (
+                {course?.map(course => (
                     <div key={course.id}>
                         <input type='checkbox'
                             checked={checked.includes(course.id)} // trả về true nếu checked có chứa id đó
