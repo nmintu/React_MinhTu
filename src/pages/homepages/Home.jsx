@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ButtonConnect } from '@/component/buttons/ButtonConnect';
+import { AppButton } from '@/component/buttons/AppButton';
 import footprint from '@/assets/footprint.svg'
 import next from '@/assets/next.svg'
 import pre from '@/assets/pre.svg'
+import { NavigationButtons } from '../../component/buttons/NavigationButtons';
 import { CardFollow } from '../../component/cardfollows/CardFollow';
 import twitter from '@/assets/twitter.svg'
 import discord from '@/assets/discord.svg'
@@ -31,21 +32,17 @@ export const Home = () => {
                         Learn more &gt;
                     </a>
                     <br />
-                    <ButtonConnect
-                        textChanged={"@ABC123456"}
-                        text="Connect your X account"
-                        onConnect={handleConnect}
-                    ></ButtonConnect>
+                    <AppButton className="text-white w-[250px] h-[41px] mt-[16px] py-[8px] px-[32px] !rounded-[100px]" >
+                        Connect your X account
+                    </AppButton>
                 </div>
 
                 {/* Card Connect Your account */}
                 <div className="flex space-x-2 w-[73.7%] mt-5 mb-4  justify-end">
-                    <button className="bg-white  border-secondary border-2 rounded-[24.85px] px-[16px] py-[8px] w-[56px] h-[40px] hover:bg-pink-50 transition">
-                        <img src={pre} />
-                    </button>
-                    <button className="bg-white  border-secondary border-2 rounded-[24.85px] px-[16px] py-[8px] w-[56px] h-[40px] hover:bg-pink-50 transition">
-                        <img src={next} />
-                    </button>
+                    <NavigationButtons image={pre} />
+                    <NavigationButtons image={next} />
+
+
                 </div>
 
                 {/* card Follow*/}

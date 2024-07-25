@@ -4,6 +4,7 @@ import wool from '@/assets/wool.svg';
 import twitter from '@/assets/twitter.svg';
 import heart from '@/assets/heart.svg';
 import discord from '@/assets/discord.svg';
+import { AppButton } from '@/component/buttons/AppButton';
 
 export const CardFollow = ({ text1, text2, img, className, isConnected }) => {
 
@@ -25,7 +26,7 @@ export const CardFollow = ({ text1, text2, img, className, isConnected }) => {
                     <button className="inline-flex bg-accent-buttonHeart text-sm w-[100px] h-auto rounded-[24.85px] px-4 py-[10px]">+20
                         <img src={heart} />
                     </button>
-                    <button className={`text-sm font-medium rounded-[100px] w-[170px] h-auto px-8 py-2 ${followButtonClass}`}>Follow</button>
+                    <AppButton className={`text-sm font-medium !rounded-[100px] w-[170px] h-auto px-8 py-2 bg-white border border-primary text-primary`}>Follow</AppButton>
                 </div>
             </div>
         </div>
