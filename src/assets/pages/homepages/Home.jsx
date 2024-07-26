@@ -1,25 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { AppButton } from '@/component/buttons/AppButton';
 import footprint from '@/assets/footprint.svg'
-import { NextButton, PreButton } from '../../component/buttons/ButtonSlick';
+import next from '@/assets/next.svg'
+import pre from '@/assets/pre.svg'
 import { NavigationButtons } from '../../component/buttons/NavigationButtons';
-import MultipleSlick from '../../component/slick/MultipleSlick';
-
+import { CardFollow } from '../../component/cardfollows/CardFollow';
+import twitter from '@/assets/twitter.svg'
+import discord from '@/assets/discord.svg'
+import clsx from 'clsx';
 export const Home = () => {
-    const sliderRef = useRef(null)
-    const handlePrevClick = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickPrev();
-        }
+    const [isConnected, setIsConnected] = useState(false);
 
+    const handleConnect = () => {
+        setIsConnected(true);
     };
 
-    const handleNextClick = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickNext();
-        }
-
-    };
     return (
         <>
             <div className="flex flex-col items-center font-roboto w-full relative">
@@ -44,16 +39,25 @@ export const Home = () => {
 
                 {/* Card Connect Your account */}
                 <div className="flex space-x-2 w-[73.7%] mt-5 mb-4  justify-end">
-                    <PreButton onClick={handlePrevClick} />
-                    <NextButton onClick={handleNextClick} />
+                    <NavigationButtons image={pre} />
+                    <NavigationButtons image={next} />
+
+
                 </div>
 
                 {/* card Follow*/}
                 <div className="flex justify-between w-[1110px] h-[332px]">
-
-                    <MultipleSlick ref={sliderRef} className={" w-[1177px] h-full"} />
-
+                    <CardFollow className={"bg-black p-3"} img={twitter} text1={"Follow Tapos X"} text2={"Follow Tapos X to earn Points"}
+                        isConnected={isConnected}
+                    />
+                    <CardFollow className={"bg-black p-3"} img={twitter} text1={"Retweet post on X"} text2={"Retweet Tapos post on X to earn Points"}
+                        isConnected={isConnected}
+                    />
+                    <CardFollow className={" w-[70px] h-[60px]"} img={discord} text1={"Joint VibrantX Discord"} text2={"Retweet a daily tweet to earn HEART"}
+                        isConnected={isConnected}
+                    />
                 </div>
+
             </div>
         </>
 
