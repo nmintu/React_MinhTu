@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { CardFollow } from '../../component/cardfollows/CardFollow';
+import { CardFollow } from '../card/CardFollow';
 import twitter from '@/assets/twitter.svg';
 import discord from '@/assets/discord.svg';
 
@@ -40,13 +40,15 @@ const MultipleSlick = forwardRef((props, ref) => {
     ]
 
     return (
-        <div className={`${className}`}>
-            <Slider ref={ref} {...settings}>
-                {slides.map((slide, index) => (
-                    <div key={index}
-                    ><CardFollow text1={slide.text1} text2={slide.text2} img={slide.img} className={slide.className} /></div>
-                ))}
-            </Slider>
+        <div className="flex justify-between w-[1110px] h-[332px]">
+            <div className={`${className}`}>
+                <Slider ref={ref} {...settings}>
+                    {slides.map((slide, index) => (
+                        <div key={index}
+                        ><CardFollow text1={slide.text1} text2={slide.text2} img={slide.img} className={slide.className} /></div>
+                    ))}
+                </Slider>
+            </div>
         </div>
     );
 });

@@ -11,6 +11,7 @@ module.exports = {
         secondary: '#EEC5C7',
 
         gray: {
+
           300: '#D0D5DD',
           600: '#475467',
           700: '#344054',
@@ -19,7 +20,9 @@ module.exports = {
         },
         neutral: {
           100: "#EEF2F6",
+          "gray-200": "#949494",
           400: "#9AA4B2",
+          "gray-500-base": "#3D3D3D"
         },
 
         accent: {
@@ -28,7 +31,10 @@ module.exports = {
           'textNav': '#8C8C8C',
           'buttonHeart': '#F5EEEC',
           'borderFollow': '#CDD5DF ',
+          "bg-green-500": "#09AE7D"
         },
+        light: "#FAFAFA"
+
 
       },
 

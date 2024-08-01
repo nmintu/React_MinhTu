@@ -4,6 +4,7 @@ import footprint from '@/assets/footprint.svg'
 import { NextButton, PreButton } from '../../component/buttons/ButtonSlick';
 import { NavigationButtons } from '../../component/buttons/NavigationButtons';
 import MultipleSlick from '../../component/slick/MultipleSlick';
+import { CardReferral } from '../../component/card/CardReferral';
 
 export const Home = () => {
     const sliderRef = useRef(null)
@@ -43,17 +44,16 @@ export const Home = () => {
                 </div>
 
                 {/* Card Connect Your account */}
-                <div className="flex space-x-2 w-[73.7%] mt-5 mb-4  justify-end">
+                <div className="flex gap-1 max-w-[1110px] w-full mx-auto  mt-5 mb-4  justify-end">
                     <PreButton onClick={handlePrevClick} />
                     <NextButton onClick={handleNextClick} />
                 </div>
 
                 {/* card Follow*/}
-                <div className="flex justify-between w-[1110px] h-[332px]">
+                <MultipleSlick ref={sliderRef} className={" w-[1177px] h-full"} />
+                <CardReferral />
 
-                    <MultipleSlick ref={sliderRef} className={" w-[1177px] h-full"} />
 
-                </div>
             </div>
         </>
 
