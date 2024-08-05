@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom"
 import { Nav } from "./Nav"
-export const DefaultLayout = () =>{
+import { Footer } from "./Footer"
+
+export const DefaultLayout = () => {
     return (
         <>
             <Nav />
 
-            {  <Outlet /> }
-            {/* <Footer /> */}
+            <Outlet />
+            <Footer />
         </>
     )
 }
