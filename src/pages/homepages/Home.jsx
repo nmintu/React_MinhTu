@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 import { AppButton } from '@/component/buttons/AppButton';
 import footprint from '@/assets/footprint.svg'
-import { NextButton, PreButton } from '../../component/buttons/ButtonSlick';
-import { NavigationButtons } from '../../component/buttons/NavigationButtons';
-import MultipleSlick from '../../component/slick/MultipleSlick';
-import { CardReferral } from '../../component/card/CardReferral';
-
+import { NextButton, PreButton } from '../../component/buttons/ButtonSlick.jsx';
+import MultipleSlick from '../../component/slick/MultipleSlick.jsx';
+import { CardReferral } from '../../component/card/CardReferral.jsx';
+import { TableFriends } from '../../component/table/TableFriends.jsx';
 export const Home = () => {
     const sliderRef = useRef(null)
     const handlePrevClick = () => {
@@ -52,7 +51,7 @@ export const Home = () => {
                 {/* card Follow*/}
                 <MultipleSlick ref={sliderRef} className={" w-[1177px] h-full"} />
                 <CardReferral />
-
+                <TableFriends />
 
             </div>
         </>
