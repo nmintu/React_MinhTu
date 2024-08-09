@@ -22,19 +22,23 @@ const MultipleSlick = forwardRef((props, ref) => {
             className: "bg-black p-3",
             img: twitter,
             text1: "Follow Tapos X",
-            text2: "Follow Tapos X to earn Points"
+            text2: "Follow Tapos X to earn Points",
+            typeSocial: 'twitter',
         },
         {
             className: "bg-black p-3",
             img: twitter,
             text1: "Retweet post on X",
-            text2: "Retweet Tapos post on X to earn Points"
+            text2: "Retweet Tapos post on X to earn Points",
+            typeSocial: 'telegram',
+
         },
         {
             className: "w-[70px] h-[60px]",
             img: discord,
             text1: "Join VibrantX Discord",
-            text2: "Retweet a daily tweet to earn HEART"
+            text2: "Retweet a daily tweet to earn HEART",
+            typeSocial: 'discord',
         },
 
     ]
@@ -45,7 +49,14 @@ const MultipleSlick = forwardRef((props, ref) => {
                 <Slider ref={ref} {...settings}>
                     {slides.map((slide, index) => (
                         <div key={index}
-                        ><CardFollow text1={slide.text1} text2={slide.text2} img={slide.img} className={slide.className} /></div>
+                        ><CardFollow
+                                address='tu'
+                                text1={slide.text1}
+                                text2={slide.text2}
+                                img={slide.img}
+                                className={slide.className}
+                                typeSocial={slide.typeSocial}
+                            /></div>
                     ))}
                 </Slider>
             </div>
